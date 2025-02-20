@@ -4,6 +4,7 @@ import google.generativeai as genai
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
+import time 
 
 
 
@@ -32,3 +33,7 @@ chain = LLMChain(llm=llm, prompt=prompt)
 for city in cities:
     output = chain.run(city)
     print(output)
+    time.sleep(5)
+
+
+# time helps to get out from rate limit 
